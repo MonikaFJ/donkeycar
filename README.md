@@ -62,3 +62,14 @@ V.start(rate_hz=10)
 
 See [home page](http://donkeycar.com), [docs](http://docs.donkeycar.com)
 or join the [Discord server](http://www.donkeycar.com/community.html) to learn more.
+
+### Save image.
+
+raspistill -o <path to file>
+
+### Undistort image.
+
+1. Make some images with calibration grid CHECKERBOARD = (6,9) in different position and put it in data/camera_calibration folder as .jpg files
+2. Run scripts/camera_calibration.py script
+3. IT will calculate camera matrix and save them in data/camera_calibration
+4. You can check if it's working with undistort.py program
