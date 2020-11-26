@@ -26,7 +26,12 @@ community contributions.
 * Use existing CAD models for design upgrades.
 
 ### Get driving.
-After building a Donkey2 you can turn on your car and go to http://localhost:8887 to drive.
+After building a Donkey2 you can turn on your car and go to http://localhost:8887 to drive. (<your car's hostname.local>:8887) or http://192.168.0.220:8887/drive
+
+cd ~/mycar
+python manage.py drive
+
+see: http://docs.donkeycar.com/guide/get_driving/
 
 ### Modify your cars behavior.
 The donkey car is controlled by running a sequence of events
@@ -64,3 +69,14 @@ V.start(rate_hz=10)
 
 See [home page](http://donkeycar.com), [docs](http://docs.donkeycar.com)
 or join the [Slack channel](http://www.donkeycar.com/community.html) to learn more.
+
+### Save image.
+
+raspistill -o <path to file>
+
+### Undistort image.
+
+1. Make some images with calibration grid CHECKERBOARD = (6,9) in different position and put it in data/camera_calibration folder as .jpg files
+2. Run scripts/camera_calibration.py script
+3. IT will calculate camera matrix and save them in data/camera_calibration
+4. You can check if it's working with undistort.py program
